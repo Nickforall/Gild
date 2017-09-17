@@ -36,7 +36,7 @@ impl MinSize {
 
 impl ValidatorCondition for MinSize {
     fn validate(&self, input: String) -> bool {
-        if input.len() > self.max {
+        if input.len() < self.max {
             return false
         }
 

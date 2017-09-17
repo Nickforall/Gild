@@ -37,3 +37,16 @@ impl ValidatorCondition for MyCustomValidator {
     }
 }
 ```
+
+**If you wrote a validator that you think the community might want to use,
+feel free to open a PR**
+
+## Validation rules
+
+We currently have a small set of rules available:
+
+* `MaxSize`
+* `MinSize`
+* `Contains`
+* `Empty`
+* `NotContains`
