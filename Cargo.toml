@@ -2,5 +2,8 @@
 name = "gild"
 version = "0.1.0"
 authors = ["Nickforall <hello@nickforall.nl>"]
+description = "A simple validator library"
+license = "MIT"
+repository = "https://github.com/Nickforall/Gild"
 
 [dependencies]
