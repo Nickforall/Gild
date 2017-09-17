@@ -1,5 +1,15 @@
 use ValidatorCondition;
 
+/// Validator that checks whether the given input is empty
+///
+/// # Examples
+///
+/// ```
+/// ValidationChain::new()
+///    .add(validators::Empty::new(false))
+///    .validate(String::from("This string is not empty"))
+///    .is_ok(),
+/// ```
 pub struct Empty {
     allowed: bool
 }
@@ -25,6 +35,16 @@ impl ValidatorCondition for Empty {
     }
 }
 
+/// Validator that checks whether the given input contains another string
+///
+/// # Examples
+///
+/// ```
+/// ValidationChain::new()
+///    .add(validators::Contain::new(String::from("world")))
+///    .validate(String::from("Hello, world"))
+///    .is_ok(),
+/// ```
 pub struct Contain {
     contains: String
 }
@@ -45,6 +65,16 @@ impl ValidatorCondition for Contain {
     }
 }
 
+/// Validator that checks whether the given input doesn't contain another string
+///
+/// # Examples
+///
+/// ```
+/// ValidationChain::new()
+///    .add(validators::NotContain::new(String::from("Hello")))
+///    .validate(String::from("Goodbye, world"))
+///    .is_ok(),
+/// ```
 pub struct NotContain {
     contains: String
 }

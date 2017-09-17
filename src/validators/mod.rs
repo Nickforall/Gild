@@ -1,3 +1,5 @@
+//! This module contains all of the built-in validators
+
 mod size;
 mod strings;
 
