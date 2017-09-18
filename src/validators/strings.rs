@@ -5,10 +5,13 @@ use ValidatorCondition;
 /// # Examples
 ///
 /// ```
+/// use gild::ValidationChain;
+/// use gild::validators;
+///
 /// ValidationChain::new()
 ///    .add(validators::Empty::new(false))
 ///    .validate(String::from("This string is not empty"))
-///    .is_ok(),
+///    .is_ok();
 /// ```
 pub struct Empty {
     allowed: bool
@@ -40,10 +43,13 @@ impl ValidatorCondition for Empty {
 /// # Examples
 ///
 /// ```
+/// use gild::ValidationChain;
+/// use gild::validators;
+///
 /// ValidationChain::new()
 ///    .add(validators::Contain::new(String::from("world")))
 ///    .validate(String::from("Hello, world"))
-///    .is_ok(),
+///    .is_ok();
 /// ```
 pub struct Contain {
     contains: String
@@ -70,10 +76,13 @@ impl ValidatorCondition for Contain {
 /// # Examples
 ///
 /// ```
+/// use gild::ValidationChain;
+/// use gild::validators;
+///
 /// ValidationChain::new()
 ///    .add(validators::NotContain::new(String::from("Hello")))
 ///    .validate(String::from("Goodbye, world"))
-///    .is_ok(),
+///    .is_ok();
 /// ```
 pub struct NotContain {
     contains: String

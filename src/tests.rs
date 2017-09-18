@@ -93,4 +93,24 @@ mod tests {
             )
         }
     }
+
+    #[test]
+    fn emails() {
+        let cases = vec![
+            ("hello@nickforall.nl", true),
+            ("hello@jdd", false),
+            ("hello@hotmail.com", true),
+            ("yess@subdomain.nickforall.nl", true),
+        ];
+
+        for (input, expect) in cases {
+            assert_eq!(
+                ValidationChain::new()
+                    .add(validators::IsEmail::new())
+                    .validate(String::from(input))
+                    .is_ok(),
+                expect
+            )
+        }
+    }
 }

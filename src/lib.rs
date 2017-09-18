@@ -1,3 +1,7 @@
+extern crate regex;
+#[macro_use]
+extern crate lazy_static;
+
 mod tests;
 
 pub mod validators;
@@ -7,15 +11,16 @@ pub mod validators;
 /// # Examples
 ///
 /// ```
+/// use gild::ValidationChain;
+/// use gild::validators;
+///
 /// ValidationChain::new()
 ///    .add(validators::Empty::new(false));
-/// ```
 ///
-/// ```
 /// ValidationChain::new()
 ///    .add(validators::Empty::new(false))
-///    .validate("I want to validate this.")
-///    .is_ok()
+///    .validate(String::from("I want to validate this."))
+///    .is_ok();
 /// ```
 pub struct ValidationChain {
     chain: Vec<Box<ValidatorCondition>>

@@ -5,10 +5,13 @@ use ValidatorCondition;
 /// # Examples
 ///
 /// ```
+/// use gild::ValidationChain;
+/// use gild::validators;
+///
 /// ValidationChain::new()
 ///    .add(validators::MaxSize::new(1000))
 ///    .validate(String::from("This string is very big, but not that big."))
-///    .is_ok(),
+///    .is_ok();
 /// ```
 pub struct MaxSize {
     max: usize
@@ -39,10 +42,13 @@ impl ValidatorCondition for MaxSize {
 /// # Examples
 ///
 /// ```
+/// use gild::ValidationChain;
+/// use gild::validators;
+///
 /// ValidationChain::new()
 ///    .add(validators::MinSize::new(10))
 ///    .validate(String::from("This string is at least 10 characters."))
-///    .is_ok(),
+///    .is_ok();
 /// ```
 pub struct MinSize {
     max: usize
