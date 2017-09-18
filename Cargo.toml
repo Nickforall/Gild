@@ -1,6 +1,6 @@
 [package]
 name = "gild"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Nickforall <hello@nickforall.nl>"]
 description = "A simple validator library"
 license = "MIT"
